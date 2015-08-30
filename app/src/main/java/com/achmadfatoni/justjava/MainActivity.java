@@ -24,8 +24,9 @@ public class MainActivity extends ActionBarActivity {
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-        display(1);
-        displayPrice(2);
+        int numberOfCoffes = 2;
+        display(numberOfCoffes);
+        displayPrice(numberOfCoffes * 5);
     }
 
     /**
@@ -43,5 +44,13 @@ public class MainActivity extends ActionBarActivity {
     private void displayPrice(int number) {
         TextView priceTextView = (TextView) findViewById(R.id.price_text_view);
         priceTextView.setText(NumberFormat.getCurrencyInstance().format(number));
+    }
+
+    public void increment(View view) {
+        display(3);
+    }
+
+    public void decrement(View view) {
+        display(1);
     }
 }
